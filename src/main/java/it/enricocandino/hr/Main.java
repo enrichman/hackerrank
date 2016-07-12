@@ -5,12 +5,13 @@
 package it.enricocandino.hr;
 
 import it.enricocandino.hr.algorithms.greedy.MaxMin;
+import it.enricocandino.hr.algorithms.sorting.InsertionSort;
 import it.enricocandino.hr.algorithms.strings.TheLoveLetterMystery;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution sol = new MaxMin();
+        Solution sol = new InsertionSort();
         sol.solve();
     }
 
