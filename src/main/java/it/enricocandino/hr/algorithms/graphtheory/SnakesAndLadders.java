@@ -39,7 +39,7 @@ public class SnakesAndLadders extends Solution {
             for(int l=0; l<100; l++) {
                 for(int r=1; r<=6; r++) {
                     if(l+r < 100)
-                        add(l, l+r, nodes, r);
+                        add(l, l+r, nodes, 1);
                 }
             }
 
@@ -65,7 +65,9 @@ public class SnakesAndLadders extends Solution {
                 visited.add(next);
             }
 
-            System.out.println(toVisit.get(99).getWeight());
+            Collections.sort(visited);
+
+            System.out.println(visited.get(99).getWeight());
         }
     }
 
@@ -111,7 +113,7 @@ public class SnakesAndLadders extends Solution {
         }
 
         private void setPrev(Node node) {
-            this.prev = prev;
+            this.prev = node;
         }
 
         public int compareTo(Node o) {
