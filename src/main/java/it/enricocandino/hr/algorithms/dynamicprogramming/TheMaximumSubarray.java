@@ -24,56 +24,29 @@ public class TheMaximumSubarray extends Solution {
                 arr[i] = in.nextInt();
             }
 
-            List<Integer> merged = new ArrayList<Integer>();
+            // Kadane's algorithm
 
-            Integer curr;
-            for(int i=0; i<arr.length; i++) {
+            int max = arr[0];
+            int globalMax = arr[0];
+            int currMax = arr[0];
 
-                // init
-                if(merged.isEmpty()) {
-                    merged.add(arr[i]);
-                    continue;
-                }
-
-                // get last
-                curr = merged.get(merged.size()-1);
-
-                if(arr[i] > 0 && curr > 0) {
-                    curr += arr[i];
-                    merged.set(merged.size()-1, curr);
-                } else {
-                    merged.add(arr[i]);
-                }
-            }
-
-            int posMax = 0;
-            int max = 0;
-
-            for(int i=0; i<merged.size()-1; i++) {
-                Integer prev = merged.get(i);
-                int currMax = prev;
-
-                if(prev < 0) {
-                    continue;
-                } else {
-                    posMax += prev;
-                }
-
-                for(int j=i+1; j<merged.size(); j++) {
-                    Integer next = merged.get(j);
-                    if(currMax > max) {
-                        max = currMax;
+            for(int i=1; i<arr.length; i++) {
+                if(max < 0) {
+                    if(arr[i] > max) {
+                        max = arr[i];
+                    } else if(arr[i] > 0) {
+                        max = arr[i];
                     }
-                    currMax += next;
+                } else if (arr[i] > 0) {
+                    max += arr[i];
                 }
+
+                currMax = Math.max(arr[i], currMax+arr[i]);
+                if(currMax > globalMax)
+                    globalMax = currMax;
             }
 
-            for(Integer i : merged) {
-                if(i > posMax && i > max)
-                    max = posMax = i;
-            }
-            System.out.println(max+" "+posMax);
+            System.out.println(globalMax+" "+max);
         }
     }
-
 }
