@@ -4,6 +4,7 @@
  */
 package it.enricocandino.hr;
 
+import it.enricocandino.hr.algorithms.bitmanipulation.LonelyInteger;
 import it.enricocandino.hr.algorithms.dynamicprogramming.TheMaximumSubarray;
 import it.enricocandino.hr.algorithms.graphtheory.EvenTree;
 import it.enricocandino.hr.algorithms.graphtheory.SnakesAndLadders;
@@ -16,7 +17,7 @@ import it.enricocandino.hr.algorithms.strings.TheLoveLetterMystery;
 public class Main {
 
     public static void main(String[] args) {
-        Solution sol = new EvenTree();
+        Solution sol = new LonelyInteger();
         sol.solve();
     }
 
