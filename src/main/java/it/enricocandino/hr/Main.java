@@ -13,11 +13,12 @@ import it.enricocandino.hr.algorithms.sorting.InsertionSort;
 import it.enricocandino.hr.algorithms.strings.AlternatingCharacters;
 import it.enricocandino.hr.algorithms.strings.BeautifulBinaryString;
 import it.enricocandino.hr.algorithms.strings.TheLoveLetterMystery;
+import it.enricocandino.hr.algorithms.warmup.CircularArrayRotation;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution sol = new LonelyInteger();
+        Solution sol = new CircularArrayRotation();
         sol.solve();
     }
 
